@@ -1,0 +1,532 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DFC2BEF71CE5B71E00BBCB19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC2BEF61CE5B71E00BBCB19 /* AppDelegate.swift */; };
+		DFC2BEF91CE5B71E00BBCB19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC2BEF81CE5B71E00BBCB19 /* ViewController.swift */; };
+		DFC2BEFC1CE5B71E00BBCB19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFC2BEFA1CE5B71E00BBCB19 /* Main.storyboard */; };
+		DFC2BEFF1CE5B71E00BBCB19 /* BasicNotesApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DFC2BEFD1CE5B71E00BBCB19 /* BasicNotesApp.xcdatamodeld */; };
+		DFC2BF011CE5B71E00BBCB19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFC2BF001CE5B71E00BBCB19 /* Assets.xcassets */; };
+		DFC2BF041CE5B71E00BBCB19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFC2BF021CE5B71E00BBCB19 /* LaunchScreen.storyboard */; };
+		DFC2BF0F1CE5B71E00BBCB19 /* BasicNotesAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC2BF0E1CE5B71E00BBCB19 /* BasicNotesAppTests.swift */; };
+		DFC2BF1A1CE5B71E00BBCB19 /* BasicNotesAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC2BF191CE5B71E00BBCB19 /* BasicNotesAppUITests.swift */; };
+		DFC2BF281CE5BE2B00BBCB19 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC2BF271CE5BE2B00BBCB19 /* NotesViewController.swift */; };
+		DFC2BF2A1CE6962400BBCB19 /* ReadOnlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC2BF291CE6962400BBCB19 /* ReadOnlyViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DFC2BF0B1CE5B71E00BBCB19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DFC2BEEB1CE5B71E00BBCB19 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DFC2BEF21CE5B71E00BBCB19;
+			remoteInfo = BasicNotesApp;
+		};
+		DFC2BF161CE5B71E00BBCB19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DFC2BEEB1CE5B71E00BBCB19 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DFC2BEF21CE5B71E00BBCB19;
+			remoteInfo = BasicNotesApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DFC2BEF31CE5B71E00BBCB19 /* BasicNotesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicNotesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFC2BEF61CE5B71E00BBCB19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DFC2BEF81CE5B71E00BBCB19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DFC2BEFB1CE5B71E00BBCB19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DFC2BEFE1CE5B71E00BBCB19 /* BasicNotesApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BasicNotesApp.xcdatamodel; sourceTree = "<group>"; };
+		DFC2BF001CE5B71E00BBCB19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DFC2BF031CE5B71E00BBCB19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DFC2BF051CE5B71E00BBCB19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFC2BF0A1CE5B71E00BBCB19 /* BasicNotesAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicNotesAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFC2BF0E1CE5B71E00BBCB19 /* BasicNotesAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicNotesAppTests.swift; sourceTree = "<group>"; };
+		DFC2BF101CE5B71E00BBCB19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFC2BF151CE5B71E00BBCB19 /* BasicNotesAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicNotesAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFC2BF191CE5B71E00BBCB19 /* BasicNotesAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicNotesAppUITests.swift; sourceTree = "<group>"; };
+		DFC2BF1B1CE5B71E00BBCB19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFC2BF271CE5BE2B00BBCB19 /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		DFC2BF291CE6962400BBCB19 /* ReadOnlyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadOnlyViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DFC2BEF01CE5B71E00BBCB19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFC2BF071CE5B71E00BBCB19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFC2BF121CE5B71E00BBCB19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DFC2BEEA1CE5B71E00BBCB19 = {
+			isa = PBXGroup;
+			children = (
+				DFC2BEF51CE5B71E00BBCB19 /* BasicNotesApp */,
+				DFC2BF0D1CE5B71E00BBCB19 /* BasicNotesAppTests */,
+				DFC2BF181CE5B71E00BBCB19 /* BasicNotesAppUITests */,
+				DFC2BEF41CE5B71E00BBCB19 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DFC2BEF41CE5B71E00BBCB19 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DFC2BEF31CE5B71E00BBCB19 /* BasicNotesApp.app */,
+				DFC2BF0A1CE5B71E00BBCB19 /* BasicNotesAppTests.xctest */,
+				DFC2BF151CE5B71E00BBCB19 /* BasicNotesAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DFC2BEF51CE5B71E00BBCB19 /* BasicNotesApp */ = {
+			isa = PBXGroup;
+			children = (
+				DFC2BEF61CE5B71E00BBCB19 /* AppDelegate.swift */,
+				DFC2BEF81CE5B71E00BBCB19 /* ViewController.swift */,
+				DFC2BEFA1CE5B71E00BBCB19 /* Main.storyboard */,
+				DFC2BF291CE6962400BBCB19 /* ReadOnlyViewController.swift */,
+				DFC2BF271CE5BE2B00BBCB19 /* NotesViewController.swift */,
+				DFC2BF001CE5B71E00BBCB19 /* Assets.xcassets */,
+				DFC2BF021CE5B71E00BBCB19 /* LaunchScreen.storyboard */,
+				DFC2BF051CE5B71E00BBCB19 /* Info.plist */,
+				DFC2BEFD1CE5B71E00BBCB19 /* BasicNotesApp.xcdatamodeld */,
+			);
+			path = BasicNotesApp;
+			sourceTree = "<group>";
+		};
+		DFC2BF0D1CE5B71E00BBCB19 /* BasicNotesAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				DFC2BF0E1CE5B71E00BBCB19 /* BasicNotesAppTests.swift */,
+				DFC2BF101CE5B71E00BBCB19 /* Info.plist */,
+			);
+			path = BasicNotesAppTests;
+			sourceTree = "<group>";
+		};
+		DFC2BF181CE5B71E00BBCB19 /* BasicNotesAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DFC2BF191CE5B71E00BBCB19 /* BasicNotesAppUITests.swift */,
+				DFC2BF1B1CE5B71E00BBCB19 /* Info.plist */,
+			);
+			path = BasicNotesAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DFC2BEF21CE5B71E00BBCB19 /* BasicNotesApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFC2BF1E1CE5B71E00BBCB19 /* Build configuration list for PBXNativeTarget "BasicNotesApp" */;
+			buildPhases = (
+				DFC2BEEF1CE5B71E00BBCB19 /* Sources */,
+				DFC2BEF01CE5B71E00BBCB19 /* Frameworks */,
+				DFC2BEF11CE5B71E00BBCB19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BasicNotesApp;
+			productName = BasicNotesApp;
+			productReference = DFC2BEF31CE5B71E00BBCB19 /* BasicNotesApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DFC2BF091CE5B71E00BBCB19 /* BasicNotesAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFC2BF211CE5B71E00BBCB19 /* Build configuration list for PBXNativeTarget "BasicNotesAppTests" */;
+			buildPhases = (
+				DFC2BF061CE5B71E00BBCB19 /* Sources */,
+				DFC2BF071CE5B71E00BBCB19 /* Frameworks */,
+				DFC2BF081CE5B71E00BBCB19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DFC2BF0C1CE5B71E00BBCB19 /* PBXTargetDependency */,
+			);
+			name = BasicNotesAppTests;
+			productName = BasicNotesAppTests;
+			productReference = DFC2BF0A1CE5B71E00BBCB19 /* BasicNotesAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DFC2BF141CE5B71E00BBCB19 /* BasicNotesAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFC2BF241CE5B71E00BBCB19 /* Build configuration list for PBXNativeTarget "BasicNotesAppUITests" */;
+			buildPhases = (
+				DFC2BF111CE5B71E00BBCB19 /* Sources */,
+				DFC2BF121CE5B71E00BBCB19 /* Frameworks */,
+				DFC2BF131CE5B71E00BBCB19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DFC2BF171CE5B71E00BBCB19 /* PBXTargetDependency */,
+			);
+			name = BasicNotesAppUITests;
+			productName = BasicNotesAppUITests;
+			productReference = DFC2BF151CE5B71E00BBCB19 /* BasicNotesAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DFC2BEEB1CE5B71E00BBCB19 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Ram Harshvardhan Radhakrishnan";
+				TargetAttributes = {
+					DFC2BEF21CE5B71E00BBCB19 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					DFC2BF091CE5B71E00BBCB19 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = DFC2BEF21CE5B71E00BBCB19;
+					};
+					DFC2BF141CE5B71E00BBCB19 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = DFC2BEF21CE5B71E00BBCB19;
+					};
+				};
+			};
+			buildConfigurationList = DFC2BEEE1CE5B71E00BBCB19 /* Build configuration list for PBXProject "BasicNotesApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DFC2BEEA1CE5B71E00BBCB19;
+			productRefGroup = DFC2BEF41CE5B71E00BBCB19 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DFC2BEF21CE5B71E00BBCB19 /* BasicNotesApp */,
+				DFC2BF091CE5B71E00BBCB19 /* BasicNotesAppTests */,
+				DFC2BF141CE5B71E00BBCB19 /* BasicNotesAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DFC2BEF11CE5B71E00BBCB19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFC2BF041CE5B71E00BBCB19 /* LaunchScreen.storyboard in Resources */,
+				DFC2BF011CE5B71E00BBCB19 /* Assets.xcassets in Resources */,
+				DFC2BEFC1CE5B71E00BBCB19 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFC2BF081CE5B71E00BBCB19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFC2BF131CE5B71E00BBCB19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DFC2BEEF1CE5B71E00BBCB19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFC2BF281CE5BE2B00BBCB19 /* NotesViewController.swift in Sources */,
+				DFC2BEF91CE5B71E00BBCB19 /* ViewController.swift in Sources */,
+				DFC2BEFF1CE5B71E00BBCB19 /* BasicNotesApp.xcdatamodeld in Sources */,
+				DFC2BEF71CE5B71E00BBCB19 /* AppDelegate.swift in Sources */,
+				DFC2BF2A1CE6962400BBCB19 /* ReadOnlyViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFC2BF061CE5B71E00BBCB19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFC2BF0F1CE5B71E00BBCB19 /* BasicNotesAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFC2BF111CE5B71E00BBCB19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFC2BF1A1CE5B71E00BBCB19 /* BasicNotesAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DFC2BF0C1CE5B71E00BBCB19 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DFC2BEF21CE5B71E00BBCB19 /* BasicNotesApp */;
+			targetProxy = DFC2BF0B1CE5B71E00BBCB19 /* PBXContainerItemProxy */;
+		};
+		DFC2BF171CE5B71E00BBCB19 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DFC2BEF21CE5B71E00BBCB19 /* BasicNotesApp */;
+			targetProxy = DFC2BF161CE5B71E00BBCB19 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DFC2BEFA1CE5B71E00BBCB19 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DFC2BEFB1CE5B71E00BBCB19 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DFC2BF021CE5B71E00BBCB19 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DFC2BF031CE5B71E00BBCB19 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DFC2BF1C1CE5B71E00BBCB19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DFC2BF1D1CE5B71E00BBCB19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DFC2BF1F1CE5B71E00BBCB19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BasicNotesApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ram.BasicNotesApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DFC2BF201CE5B71E00BBCB19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BasicNotesApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ram.BasicNotesApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DFC2BF221CE5B71E00BBCB19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BasicNotesAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ram.BasicNotesAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BasicNotesApp.app/BasicNotesApp";
+			};
+			name = Debug;
+		};
+		DFC2BF231CE5B71E00BBCB19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BasicNotesAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ram.BasicNotesAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BasicNotesApp.app/BasicNotesApp";
+			};
+			name = Release;
+		};
+		DFC2BF251CE5B71E00BBCB19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BasicNotesAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ram.BasicNotesAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BasicNotesApp;
+			};
+			name = Debug;
+		};
+		DFC2BF261CE5B71E00BBCB19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BasicNotesAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ram.BasicNotesAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BasicNotesApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DFC2BEEE1CE5B71E00BBCB19 /* Build configuration list for PBXProject "BasicNotesApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFC2BF1C1CE5B71E00BBCB19 /* Debug */,
+				DFC2BF1D1CE5B71E00BBCB19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFC2BF1E1CE5B71E00BBCB19 /* Build configuration list for PBXNativeTarget "BasicNotesApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFC2BF1F1CE5B71E00BBCB19 /* Debug */,
+				DFC2BF201CE5B71E00BBCB19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DFC2BF211CE5B71E00BBCB19 /* Build configuration list for PBXNativeTarget "BasicNotesAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFC2BF221CE5B71E00BBCB19 /* Debug */,
+				DFC2BF231CE5B71E00BBCB19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DFC2BF241CE5B71E00BBCB19 /* Build configuration list for PBXNativeTarget "BasicNotesAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFC2BF251CE5B71E00BBCB19 /* Debug */,
+				DFC2BF261CE5B71E00BBCB19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DFC2BEFD1CE5B71E00BBCB19 /* BasicNotesApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DFC2BEFE1CE5B71E00BBCB19 /* BasicNotesApp.xcdatamodel */,
+			);
+			currentVersion = DFC2BEFE1CE5B71E00BBCB19 /* BasicNotesApp.xcdatamodel */;
+			path = BasicNotesApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DFC2BEEB1CE5B71E00BBCB19 /* Project object */;
+}
