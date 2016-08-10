@@ -16,7 +16,8 @@
 		DFC2BF0F1CE5B71E00BBCB19 /* BasicNotesAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC2BF0E1CE5B71E00BBCB19 /* BasicNotesAppTests.swift */; };
 		DFC2BF1A1CE5B71E00BBCB19 /* BasicNotesAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC2BF191CE5B71E00BBCB19 /* BasicNotesAppUITests.swift */; };
 		DFC2BF281CE5BE2B00BBCB19 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC2BF271CE5BE2B00BBCB19 /* NotesViewController.swift */; };
-		DFC2BF2A1CE6962400BBCB19 /* ReadOnlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC2BF291CE6962400BBCB19 /* ReadOnlyViewController.swift */; };
+		DFC615771D40475C00D50236 /* SimpleNotes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC615751D40475C00D50236 /* SimpleNotes+CoreDataProperties.swift */; };
+		DFC615781D40475C00D50236 /* SimpleNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC615761D40475C00D50236 /* SimpleNotes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +53,8 @@
 		DFC2BF191CE5B71E00BBCB19 /* BasicNotesAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicNotesAppUITests.swift; sourceTree = "<group>"; };
 		DFC2BF1B1CE5B71E00BBCB19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFC2BF271CE5BE2B00BBCB19 /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
-		DFC2BF291CE6962400BBCB19 /* ReadOnlyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadOnlyViewController.swift; sourceTree = "<group>"; };
+		DFC615751D40475C00D50236 /* SimpleNotes+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SimpleNotes+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DFC615761D40475C00D50236 /* SimpleNotes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleNotes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,10 +105,11 @@
 		DFC2BEF51CE5B71E00BBCB19 /* BasicNotesApp */ = {
 			isa = PBXGroup;
 			children = (
+				DFC615751D40475C00D50236 /* SimpleNotes+CoreDataProperties.swift */,
+				DFC615761D40475C00D50236 /* SimpleNotes.swift */,
 				DFC2BEF61CE5B71E00BBCB19 /* AppDelegate.swift */,
 				DFC2BEF81CE5B71E00BBCB19 /* ViewController.swift */,
 				DFC2BEFA1CE5B71E00BBCB19 /* Main.storyboard */,
-				DFC2BF291CE6962400BBCB19 /* ReadOnlyViewController.swift */,
 				DFC2BF271CE5BE2B00BBCB19 /* NotesViewController.swift */,
 				DFC2BF001CE5B71E00BBCB19 /* Assets.xcassets */,
 				DFC2BF021CE5B71E00BBCB19 /* LaunchScreen.storyboard */,
@@ -266,10 +269,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFC2BF281CE5BE2B00BBCB19 /* NotesViewController.swift in Sources */,
+				DFC615781D40475C00D50236 /* SimpleNotes.swift in Sources */,
 				DFC2BEF91CE5B71E00BBCB19 /* ViewController.swift in Sources */,
 				DFC2BEFF1CE5B71E00BBCB19 /* BasicNotesApp.xcdatamodeld in Sources */,
 				DFC2BEF71CE5B71E00BBCB19 /* AppDelegate.swift in Sources */,
-				DFC2BF2A1CE6962400BBCB19 /* ReadOnlyViewController.swift in Sources */,
+				DFC615771D40475C00D50236 /* SimpleNotes+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,7 +417,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ram Harshvardhan Radhakrishnan (2PT8A95WCB)";
 				INFOPLIST_FILE = BasicNotesApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ram.BasicNotesApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -424,7 +431,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ram Harshvardhan Radhakrishnan (2PT8A95WCB)";
 				INFOPLIST_FILE = BasicNotesApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ram.BasicNotesApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -496,6 +506,7 @@
 				DFC2BF201CE5B71E00BBCB19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DFC2BF211CE5B71E00BBCB19 /* Build configuration list for PBXNativeTarget "BasicNotesAppTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +515,7 @@
 				DFC2BF231CE5B71E00BBCB19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DFC2BF241CE5B71E00BBCB19 /* Build configuration list for PBXNativeTarget "BasicNotesAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +524,7 @@
 				DFC2BF261CE5B71E00BBCB19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

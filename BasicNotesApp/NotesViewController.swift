@@ -9,18 +9,20 @@
 import UIKit
 import CoreData
 
-class NotesViewController: UIViewController {
+class NotesViewController: UIViewController, UITextViewDelegate {
     
-    var newNotes = [NSManagedObject]()
-    
+    var newNotes = [SimpleNotes]()
     let date = NSDate()
+    var titlePlaceholder: String = "Give a title!"
+    var notesPlaceholder: String = "Go for it!"
+    var titleText: String = ""
+    var notesText: String = ""
+    var uniqueValueOfSavedData: String = ""
+    var randomNumber: String = ""
 
     @IBOutlet weak var titleTextField: UITextView!
-    
     @IBOutlet weak var noteTextField: UITextView!
-    
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     
     @IBAction func cancelButtonClicked(sender: AnyObject) {
@@ -28,47 +30,94 @@ class NotesViewController: UIViewController {
     }
     
     @IBAction func saveButtonClicked(sender: AnyObject) {
-        self.saveName(titleTextField.text, textString: noteTextField.text, currentDate: date)
+        self.saveName(titleTextField.text, textString: noteTextField.text, currentDate: date, unique: randomNumber)
         navigationController?.popViewControllerAnimated(true)
     }
     
-    //Saving data from UI to DB through CoreData
-    func saveName(titleString: String, textString: String, currentDate: NSDate) {
+    //Saving data to DB through CoreData
+    func saveName(titleString: String, textString: String, currentDate: NSDate, unique: String) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         let entity = NSEntityDescription.entityForName("SimpleNotes", inManagedObjectContext: managedContext)
-        let simpleNotes = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
-        simpleNotes.setValue(titleString, forKey: "title")
-        simpleNotes.setValue(textString, forKey: "text")
-        
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let dateString = dateFormatter.stringFromDate(currentDate)
     
-        simpleNotes.setValue(dateString, forKey: "date")
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd H:mm"
+        let dateString = dateFormatter.stringFromDate(currentDate)
         
-        do{
-            try managedContext.save()
-            newNotes.append(simpleNotes)
+        let fetchRequest = NSFetchRequest(entityName: "SimpleNotes") //SELECT statement in SQL
+        fetchRequest.predicate = NSPredicate(format: "unique = %@", unique) //WHERE statement in SQL
+        
+        do {
+            if let fetchResults = try managedContext.executeFetchRequest(fetchRequest) as? [SimpleNotes] { //Updating existing notes
+                if fetchResults.count != 0 {
+                    let managedObject = fetchResults[0]
+                    managedObject.setValue(titleString, forKey: "title")
+                    managedObject.setValue(textString, forKey: "text")
+                } else { //Save only when new notes are created
+                    let simpleNotes = SimpleNotes(entity: entity!, insertIntoManagedObjectContext: managedContext)
+                    simpleNotes.title = titleString
+                    simpleNotes.text = textString
+                    simpleNotes.date = dateString
+                    simpleNotes.unique = unique
+                    
+                    do{
+                        try managedContext.save()
+                        newNotes.append(simpleNotes)
+                    } catch let error as NSError {
+                        print("Could not save \(error) due to \(error.userInfo)")
+                    }
+                }
+            }
         } catch let error as NSError {
-            print("Could not save \(error) due to \(error.userInfo)")
+            print("Could not fetch \(error), due to \(error.userInfo)")
+        }
+    }
+
+    func textViewDidBeginEditing(textView: UITextView) {
+        if textView.textColor == UIColor.lightGrayColor() {
+            textView.text = nil
+            textView.textColor = UIColor.blackColor()
+            textView.scrollEnabled = true
         }
     }
     
-    func textViewStyling(textView: UITextView) {
-        textView.layer.borderColor = UIColor.lightGrayColor().CGColor
-        textView.layer.borderWidth = 1
-        textView.layer.cornerRadius = 6.0
-        textView.layer.masksToBounds = true
-        textView.textColor = UIColor.blackColor()
-        textView.opaque = true
+    func textViewDidEndEditing(textView: UITextView) {
+        if self.titleTextField.text.isEmpty {
+            titleTextField.text = titlePlaceholder
+            titleTextField.textColor = UIColor.lightGrayColor()
+        }
+        if self.noteTextField.text.isEmpty {
+            noteTextField.text = notesPlaceholder
+            noteTextField.textColor = UIColor.lightGrayColor()
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "New Note"
-        textViewStyling(titleTextField)
-        textViewStyling(noteTextField)
+        titleTextField.delegate = self
+        noteTextField.delegate = self
+        
+        self.automaticallyAdjustsScrollViewInsets = false //Cursor at beginning of text view
+        
+        if (titleText == "") {
+            title = "New Note"
+            titleTextField.text = titlePlaceholder
+            titleTextField.textColor = UIColor.lightGrayColor()
+        } else {
+            title = "Edit note"
+            titleTextField.text = titleText
+        }
+        if (notesText == "") {
+            noteTextField.text = notesPlaceholder
+            noteTextField.textColor = UIColor.lightGrayColor()
+        } else {
+            noteTextField.text = notesText
+        }
+        if (uniqueValueOfSavedData == "") {
+            randomNumber = "\(arc4random())"
+        } else {
+            randomNumber = uniqueValueOfSavedData
+        }
     }
 }

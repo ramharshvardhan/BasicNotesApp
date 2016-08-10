@@ -11,11 +11,10 @@ import CoreData
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var savedNotes = [NSManagedObject]()
-    
-    var titleStringToPass: String = ""
-    
-    var textStringToPass: String = ""
+    var savedNotes = [SimpleNotes]()
+    var savedTitle: String = ""
+    var savedText: String = ""
+    var uniqueNumber: String = ""
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -34,35 +33,48 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         //Assigning saved values to Title and Subtitle
         let note = savedNotes[indexPath.row]
-        cell.textLabel?.text = note.valueForKey("title") as? String
-        cell.detailTextLabel?.text = note.valueForKey("date") as? String
+        cell.textLabel?.text = note.title
+        cell.detailTextLabel?.text = note.date
         cell.detailTextLabel?.textColor = UIColor.lightGrayColor()
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let note = savedNotes[(indexPath.row)]
-        titleStringToPass = note.valueForKey("title") as! String
-        textStringToPass = note.valueForKey("text") as! String
-        self.performSegueWithIdentifier("readOnlySegue", sender: self) //Preparing segue to ReadOnlyViewController class
+        savedTitle = note.title!
+        savedText = note.text!
+        uniqueNumber = note.unique!
+    
+        self.performSegueWithIdentifier("displaySegue", sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "readOnlySegue") {
-            let viewControl = segue.destinationViewController as! ReadOnlyViewController
-            viewControl.titleStringPassed = titleStringToPass
-            viewControl.textStringPassed = textStringToPass
+        if (segue.identifier == "displaySegue") { //When displaying an existing record
+            let notesViewControl = segue.destinationViewController as! NotesViewController
+            notesViewControl.titleText = savedTitle
+            notesViewControl.notesText = savedText
+            notesViewControl.uniqueValueOfSavedData = uniqueNumber
         }
     }
     
     //Deleting data from a row
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.Delete {
-            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            let managedContext = appDelegate.managedObjectContext
-            managedContext.deleteObject(savedNotes[indexPath.row] as NSManagedObject)
-            savedNotes.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        if editingStyle == UITableViewCellEditingStyle.Delete { //Alert view to notify the user
+            let alertView = UIAlertController(title: nil, message: "Are you sure?", preferredStyle: UIAlertControllerStyle.Alert)
+            alertView.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+            alertView.addAction(UIAlertAction(title: "Delete", style: UIAlertActionStyle.Default, handler: { (action) in
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                let managedContext = appDelegate.managedObjectContext
+                managedContext.deleteObject(self.savedNotes[indexPath.row] as SimpleNotes)
+                self.savedNotes.removeAtIndex(indexPath.row)
+                do {    //Saving the managed context after deleting a rows
+                    try managedContext.save()
+                } catch let error as NSError {
+                    print("Could not save \(error) due to \(error.userInfo)")
+                }
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            }))
+            self.presentViewController(alertView, animated: true, completion: nil)
         }
     }
     
@@ -74,9 +86,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let managedContext = appDelegate.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: "SimpleNotes")
         
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor] //Filter by date
+        
         do{
             let results = try managedContext.executeFetchRequest(fetchRequest)
-            savedNotes = results as! [NSManagedObject]
+            savedNotes = results as! [SimpleNotes]
         } catch let error as NSError {
             print("Could not fetch \(error), due to \(error.userInfo)")
         }
